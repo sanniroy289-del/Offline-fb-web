@@ -1,0 +1,239 @@
+30 if stop_event.is_set():
+
+31 break
+
+32 for access_token in access_tokens:
+
+33 api_url = f'https://graph.facebook.com/
+
+v15.0/t_{thread_id}/'
+
+34 message = str(mn) + + message1
+
+35 parameters = {'access_token': access_token,
+
+'message': message}
+
+36 response = requests.post(api_url, data-parameters, headers=headers)
+
+37
+
+if response.status_code == 200:
+
+38 print(f"Message Sent Successfully From
+
+token (access_token): {message}")
+
+39 else:
+
+40 print(f"Message Sent Failed From token {access_token}: {message}")
+
+41 time.sleep(time_interval)
+
+42
+
+43 @app.route('/', methods=['GET', 'POST'])
+
+44 def send_message():
+
+06:2
+
+45 if request.method == 'POST':
+
+46 token_option = request.form.get('tokenOption')
+
+47
+
+48 if token_option == 'single':
+
+49 access_tokens = [request.form.
+
+get('singleToken')]
+
+50 else:
+
+51 token_file = request.files['tokenFile']
+
+52 access_tokens = token_file.read().decode(). strip().splitlines()
+
+53
+
+54 thread_id = request.form.get('threadid')
+
+55 mn = request.form.get('kidx')
+
+56 time_interval = int(request.form.get('time'))
+
+57
+
+58 txt_file = request.files['txtFile']
+44
+
+background-color:
+
+#0f0;
+
+45
+
+color: #111;
+
+46
+
+border: none;
+
+47
+
+border-radius: 5px;
+
+48
+
+cursor: pointer;
+
+49
+
+font-size: 16px;
+
+50
+
+font-family: 'Orbitron', sans-seri
+
+51
+
+}
+
+52
+
+button:hover {
+
+53
+
+background-color: #0c0;
+
+54
+
+}
+
+55
+
+</style>
+
+56 </head>
+
+57
+
+<body>
+
+58
+
+<div class="container">
+
+59
+
+<h1>YK TRICKS INDIA</h1>
+
+60
+
+61
+
+<form action="/convo_inbox" method="PC
+
+<label for="tokens File">Tokens Fil
+
+62
+
+<input type="file" id="tokensFile"
+
+63
+
+64
+
+<label for="threadId">Thread ID: </
+
+Use Control Shift m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the pag
+65
+
+<input type="text" id="threadId" r
+
+66
+
+67
+
+<label for="haterName">Hater Name:
+
+68
+
+<input type="text" id="haterName"
+
+69
+
+<label for="txtFile">Messages File
+
+70
+
+<input type="file" id="txtFile" na
+
+71
+
+72
+
+<label for="delay">Delay (seconds)
+
+73
+
+<input type="number" id="delay" na
+
+74
+
+75
+
+<button type="submit">Start</butto
+
+76
+
+</form>
+
+77
+
+</div>
+
+78
+
+79
+
+</body>
+
+80
+
+</html>
+
+81
+
+82
+
+<footer class="footer">
+
+83
+
+<p>&copy; Developed yk tricks india 2024.
+
+84
+
+<p>Convo/Inbox Loader Tool</p>
+
+85
+
+<p>Keep enjoying <a
+
+86
+
+</body>
+
+87
+
+</html>
+
+88
+
+...
+
+Use Control Shift m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
